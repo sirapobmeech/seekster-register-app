@@ -42,7 +42,9 @@ app.post('/auth',(req, res) => {
     }
 
   } else {
-    res.send('Please correct email and password.');
+    return res.status(404).send({
+      message: 'Please correct email and password'
+   });
   }
 
 })
